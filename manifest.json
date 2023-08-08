@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Paul Graham Backlinks",
+    "version": "1.0",
+    "description": "Add backlinks from footnotes to text in Paul Graham's essays",
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "content_scripts": [
+      {
+        "matches": ["http://www.paulgraham.com/*"], 
+        "js": ["script.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
